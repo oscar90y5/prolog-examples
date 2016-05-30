@@ -11,7 +11,12 @@ Practica 8:
 */
 
 
-borrar(H, [H|T], T).
 
-borrar(Elem, [H|T], [H|R]):-
-    borrar(Elem, T, R).
+borrar(A,[],B):-
+        B = "".
+borrar(A,[X|Y],B):-
+        A=X, B = Y.
+borrar(A,[X|Y],B):-
+        borrar(A,Y,R),
+        B = [X|R].
+
